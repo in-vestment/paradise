@@ -1,5 +1,8 @@
 title: in.vestment
 theme: minima
+github_username: in-vestment
+email: mail.vestment.in@gmail.com
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
