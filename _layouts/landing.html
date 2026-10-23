@@ -9,7 +9,12 @@ layout: default
     </picture>
   </div>
   <div class="mobile-banner">
-    <div class="mobile-logo" aria-label="vestment.in"><div class="mobile-logo-stage" aria-hidden="true"><span class="logo-bars"><i></i><i></i><i></i></span><span class="logo-body">vestment</span><span class="logo-domain">.in</span><span class="logo-prefix">in</span></div><div class="mobile-taglines" aria-hidden="true"><span class="tag-one">Expertise needs Participation.</span><span class="tag-two">You bring the IN.</span><span class="tag-three">Together, we make it happen.</span></div></div>
+    <div class="mobile-logo" aria-label="vestment.in">
+      <picture>
+        <source media="(prefers-reduced-motion: no-preference)" srcset="{{ '/assets/images/mobile-brand-once.webp' | relative_url }}" type="image/webp">
+        <img class="mobile-brand-animation" src="{{ '/assets/images/mobile-brand-final.webp' | relative_url }}" width="888" height="204" alt="vestment.in" fetchpriority="high">
+      </picture>
+    </div>
     <div class="mobile-flow" aria-label="Earnings, expenses, savings, then investments">
       {% assign steps = 'earnings,expenses,savings,investments' | split: ',' %}
       {% for step in steps %}<div class="flow-step"><img src="{{ '/assets/images/' | append: step | append: '.webp' | relative_url }}" alt="" width="240" height="240"><span>{{ step | capitalize }}</span></div>{% endfor %}
