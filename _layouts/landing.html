@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<section class="hero" aria-label="Investing supports the important parts of our lives">
+  <div class="desktop-banner">
+    <picture>
+      <source media="(min-width: 760px) and (prefers-reduced-motion: no-preference)" srcset="{{ '/assets/images/vestment-banner-hd.gif' | relative_url }}" type="image/gif">
+      <img src="{{ '/assets/images/vestment-banner-poster.webp' | relative_url }}" width="1920" height="1080" fetchpriority="high" alt="Vestment: earnings flow through expenses, savings and investments to support vacations, a home, child education and marriage, and financial independence.">
+    </picture>
+  </div>
+  <div class="mobile-banner">
+    <div class="mobile-logo" aria-label="vestment.in"><div class="mobile-logo-stage" aria-hidden="true"><span class="logo-bars"><i></i><i></i><i></i></span><span class="logo-body">vestment</span><span class="logo-domain">.in</span><span class="logo-prefix">in</span></div><div class="mobile-taglines" aria-hidden="true"><span class="tag-one">Expertise needs Participation.</span><span class="tag-two">You bring the IN.</span><span class="tag-three">Together, we make it happen.</span></div></div>
+    <div class="mobile-flow" aria-label="Earnings, expenses, savings, then investments">
+      {% assign steps = 'earnings,expenses,savings,investments' | split: ',' %}
+      {% for step in steps %}<div class="flow-step"><img src="{{ '/assets/images/' | append: step | append: '.webp' | relative_url }}" alt="" width="240" height="240"><span>{{ step | capitalize }}</span></div>{% endfor %}
+    </div>
+    <div class="flow-down" aria-hidden="true">↓</div>
+    <div class="mobile-goals">
+      <div class="mobile-goal"><img src="{{ '/assets/images/vacations.webp' | relative_url }}" alt="" width="240" height="240"><span>Vacations &amp;<br>Experiences</span></div>
+      <div class="mobile-goal"><img src="{{ '/assets/images/home.webp' | relative_url }}" alt="" width="240" height="240"><span>Home</span></div>
+      <div class="mobile-goal"><img src="{{ '/assets/images/education.webp' | relative_url }}" alt="" width="240" height="240"><span>Child Education<br>&amp; Marriage</span></div>
+      <div class="mobile-goal"><img src="{{ '/assets/images/independence.webp' | relative_url }}" alt="" width="240" height="240"><span>Financial<br>Independence</span></div>
+    </div>
+  </div>
+</section>
+<section class="section intro" id="start">
+  <div><p class="eyebrow">Start with the bigger picture</p><h1>Your life comes first.<br>Investing follows.</h1></div>
+  <div><p>Everyday needs. A home. Your children’s future. The life you want to sustain. These are the reasons we earn, save, and invest.</p><a class="text-link" href="{{ '/start-here/' | relative_url }}">Where does investing fit in our lives? <span aria-hidden="true">↗</span></a></div>
+</section>
+<section class="explore-section" id="explore"><div class="section">
+  <h2>A little clarity.<br>A better place to begin.</h2>
+  <div class="topic-grid">
+    <details class="topic"><summary><span class="topic-symbol" aria-hidden="true">↗</span><h3>Investing basics</h3><p>Understand the ideas before the instruments.</p><span class="topic-open" aria-hidden="true">+</span></summary><div class="topic-detail"><p>Start with why you invest: the needs and responsibilities your money must support.</p><a class="text-link" href="{{ '/start-here/' | relative_url }}">Start here →</a></div></details>
+    <details class="topic"><summary><span class="topic-symbol" aria-hidden="true">▤</span><h3>Building a portfolio</h3><p>See how the pieces work together.</p><span class="topic-open" aria-hidden="true">+</span></summary><div class="topic-detail"><p>A portfolio brings your investments together. Begin by understanding what you need them to do.</p><a class="text-link" href="{{ '/blog/' | relative_url }}">Explore the blog →</a></div></details>
+    <details class="topic"><summary><span class="topic-symbol" aria-hidden="true">⚑</span><h3>Financial goals</h3><p>Connect your money to what matters.</p><span class="topic-open" aria-hidden="true">+</span></summary><div class="topic-detail"><p>A home, education, experiences, and everyday life give your financial decisions a purpose.</p><a class="text-link" href="{{ '/start-here/' | relative_url }}">See the bigger picture →</a></div></details>
+    <details class="topic"><summary><span class="topic-symbol" aria-hidden="true">◇</span><h3>Understanding risk</h3><p>Make room for life’s uncertainties.</p><span class="topic-open" aria-hidden="true">+</span></summary><div class="topic-detail"><p>Income can stop unexpectedly. Planning starts with recognising that uncertainty.</p><a class="text-link" href="{{ '/start-here/' | relative_url }}">Read the introduction →</a></div></details>
+  </div>
+</div></section>
+<section class="section" id="articles"><div class="section-heading"><h2>Ideas worth spending time with.</h2><a class="text-link" href="{{ '/blog/' | relative_url }}">All blogs <span aria-hidden="true">↗</span></a></div>
+  <div class="article-grid">
+    {% for post in site.posts limit: 3 %}<article class="article-card"><p class="eyebrow">{% if post.categories.size > 0 %}{{ post.categories | first | replace: '-', ' ' | escape }}{% else %}From the blog{% endif %}</p><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3><div class="article-excerpt">{{ post.excerpt | strip_html | truncatewords: 27 | escape }}</div><p class="article-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %-d, %Y' }}</time><span aria-hidden="true">↗</span></p></article>{% endfor %}
+    <article class="article-card introduction-card"><p class="eyebrow">The bigger picture</p><h3><a href="{{ '/start-here/' | relative_url }}">Where does investing fit in our lives?</a></h3><div class="article-excerpt">The needs our earnings support—and why investing plays a crucial role.</div><a class="text-link" href="{{ '/start-here/' | relative_url }}">Read the introduction →</a></article>
+  </div>
+</section>
+<section class="perspective"><p class="eyebrow">The Vestment perspective</p><h2>Investing begins with the life<br>your money needs to support.</h2><p>Clear ideas. Thoughtful decisions. A lifetime in view.</p></section>
