@@ -1,1 +1,5 @@
-
+<footer class="site-footer">
+  <div class="footer-top"><a class="wordmark" href="{{ '/' | relative_url }}">vestment<span>.in</span></a><nav aria-label="Footer navigation"><a href="{{ '/blog/' | relative_url }}">Blogs</a><a href="{{ '/about/' | relative_url }}">About</a>{% if site.email %}<a href="mailto:{{ site.email | escape }}">Contact</a>{% endif %}<a href="{{ '/feed.xml' | relative_url }}">RSS</a></nav></div>
+  <p>For financial education. Content does not constitute personalised investment advice. Investments involve risk.</p>
+  <small>© {{ 'now' | date: '%Y' }} Vestment</small>
+</footer>
