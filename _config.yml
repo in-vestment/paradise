@@ -8,5 +8,6 @@ plugins:
   - jekyll-seo-tag
 
 header_pages:
-  - about.md
+  - learn.md
   - blog.md
+  - about.md
