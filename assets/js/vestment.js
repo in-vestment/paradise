@@ -1,5 +1,14 @@
 /* Small, dependency-free enhancements. Content and navigation work without JS. */
 (() => {
+  // Measure wrapping and expanded menus so anchors and the Learn drawer clear the header.
+  const header = document.querySelector('.site-header');
+  if (header && 'ResizeObserver' in window) {
+    const updateHeaderHeight = () => document.documentElement.style.setProperty(
+      '--header-height', `${header.getBoundingClientRect().height}px`
+    );
+    updateHeaderHeight();
+    new ResizeObserver(updateHeaderHeight).observe(header);
+  }
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.getElementById('site-navigation');
   if (toggle && nav) {
